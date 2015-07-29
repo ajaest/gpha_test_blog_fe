@@ -33,8 +33,10 @@ var assets = {
     'js' : {
         src : [
             // 3th party dependencies
-            gulpath('bower_components/moment/moment.js'     ),
-            gulpath('bower_components/angular.js/angular.js'),
+            gulpath('bower_components/moment/moment.js'              ),
+            gulpath('bower_components/angular.js/angular.js'         ),
+            gulpath('bower_components/angular.js/angular-route.js'   ),
+            gulpath('bower_components/angular.js/angular-resource.js'),
             // Custom logic (mostly angular files). Order is not important
             // as the dependecy injection system do not require dependencies to
             // be ordered.
@@ -54,7 +56,8 @@ gulp.task('webserver', ['compile-assets'], function() {
         // change to any file in the scope
         // causes the server to reload
         livereload: true              ,
-        root      : gulpath('public/')
+        root      : gulpath('public/'),
+        port      : 8888
     });
 });
 

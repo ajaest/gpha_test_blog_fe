@@ -1,0 +1,12 @@
+<h1>Task list</h1>
+
+<div data-ng-if="objs.$resolved && objs.length===0">
+    There are no tasks
+</div>
+
+<ol data-ng-if="!(objs.$resolved && objs.length===0)">
+	<li data-ng-repeat="obj in objs" >
+	   {{obj.summary}}
+	</li>
+	
+</ol>
