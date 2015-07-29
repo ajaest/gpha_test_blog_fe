@@ -66,10 +66,16 @@ To run those tests just type from the ``backend`` folder with the _virtualenv_ a
 
     python manage.py tests
     
-## Some things that must be changed if this were a production environment or real project
+# Some nice features
+- The backend is partially tested
+- The angular elements are completely modularized and separated in different files
+- The load progress is reflected by the page title
+    
+# Some things that must be changed if this were a production environment or real project
 
 - Finish API python tests
 - Create a file ``frontent/js/utils/config-production.js`` which would register a different service similar to ``frontent/js/utils/config-debug.js`` with the production parameteres. This file should be imported 
 - Create a gulp task named ``deploy-production`` to deploy the project in production. This task should:
   - Compress JS, HTML and CSS files when copying them to production
   - Include ``frontent/js/utils/config-production.js`` instead of ``frontent/js/utils/config-debug.js`` for the ``config`` angular service.
+- Add pagination to the list models. Django API supports it, but making it work in angular is a little more complex, I just felt lazy doing it.

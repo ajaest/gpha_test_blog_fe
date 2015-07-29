@@ -1,4 +1,5 @@
 (function (task_manager) {
+    'use strict';
     
     function TaskFactory(
         $resource, 

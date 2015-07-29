@@ -5,6 +5,7 @@
         
         $routeProvider
         .when('/', {
+            title      : 'Task list'               ,
             templateUrl: '/partials/task-list.html',
             controller : 'TaskListController'
         });
