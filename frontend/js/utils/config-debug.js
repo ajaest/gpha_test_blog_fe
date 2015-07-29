@@ -5,7 +5,7 @@
     var page_title_suffix = ' - Task Manager (Debug)'             ;  
     
     function ConfigDebugService($rootScope){
-        
+                
         this.api_url = function (resource) {
             return base_path + resource;
         };

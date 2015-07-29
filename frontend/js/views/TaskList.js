@@ -6,9 +6,10 @@
         
         $routeProvider
         .when('/', {
-            title      : 'Task list'               ,
-            templateUrl: '/partials/task-list.html',
-            controller : 'TaskListController'
+            title         : 'Task list'               ,
+            selected_menu : 'task-list'               ,
+            templateUrl   : '/partials/task-list.html',
+            controller    : 'TaskListController'
         });
           
     }]);

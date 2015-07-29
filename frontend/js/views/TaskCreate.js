@@ -5,9 +5,10 @@
         
         $routeProvider
         .when('/tasks/new', {
-            title      : 'Create new task'         ,
-            templateUrl: '/partials/task-form.html',
-            controller : 'TaskCreateController'
+            title         : 'Create new task'         ,
+            selected_menu : 'task-create'             ,
+            templateUrl   : '/partials/task-form.html',
+            controller    : 'TaskCreateController'
         });
           
     }]);

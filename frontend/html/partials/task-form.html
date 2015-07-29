@@ -1,14 +1,13 @@
 
-<form>
-    <label>
-        Summary
-        <input type="text" data-ng-model="obj.summary"/>
-    </label>
+<form class="input-group">
+    
+    <input class="form-control"  placeholder="Summary" type="text" data-ng-model="obj.summary"/>
+    
     <div data-ng-show="error_data.summary">{{error_data.summary[0]}}</div>
     
     <label>
         Description
-        <textarea data-ng-model="obj.description"></textarea>
+        <textarea class="form-control" data-ng-model="obj.description"></textarea>
     </label>
     <div data-ng-show="error_data.description">{{error_data.description[0]}}</div>
     
@@ -25,16 +24,16 @@
     
     <label>
         Due date
-        <input type="datetime-local" data-ng-model="obj.due"/>
+        <input class="form-control" type="datetime-local" data-ng-model="obj.due"/>
     </label>
     <div data-ng-show="error_data.due">{{error_data.due[0]}}</div>
     
     <label>
         Is finished/done
-        <input type="checkbox" data-ng-model="obj.finished"/>
+        <input class="form-control" type="checkbox" data-ng-model="obj.finished"/>
     </label>
     <div data-ng-show="error_data.finished">{{error_data.finished[0]}}</div>
     
     
-    <button data-ng-click="saveObject()">Save</button>
+    <button class="btn btn-default" data-ng-click="saveObject()">Save</button>
 </form>

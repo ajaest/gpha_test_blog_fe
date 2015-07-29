@@ -24,19 +24,32 @@ var assets = {
     },
 
     'less': {
-    	path: gulpath('less/'         ),
-    	// References all necessary css files
-        src : gulpath('less/main.less'),
-        dst : gulpath('public/styles/')
+    	paths: [
+    	    gulpath('less/'                                         ),
+    	    gulpath('bower_components/bootstrap/less/'),
+    	],
+    	// References all necessary less files
+        src  : [
+            gulpath('bower_components/bootstrap/less/bootstrap.less'),
+            gulpath('less/main.less'                                ),
+        ],
+        dst  : gulpath('public/styles/')
     },
 
     'js' : {
         src : [
             // 3th party dependencies
+            // JQuery is required by bootstrap and is used as a side effect by
+            // angular
+            gulpath('bower_components/jquery/dist/jquery.js'         ),
+            // Moment.js is used to print dates nicely
             gulpath('bower_components/moment/moment.js'              ),
             gulpath('bower_components/angular.js/angular.js'         ),
             gulpath('bower_components/angular.js/angular-route.js'   ),
+            // Angular-resource is used to modify models
             gulpath('bower_components/angular.js/angular-resource.js'),
+            // Bootstrap is used for styling and animations
+            gulpath('bower_components/bootstrap/dist/js/bootstrap.js'),
             // Custom logic (mostly angular files). Order is not important
             // as the dependecy injection system do not require dependencies to
             // be ordered.
@@ -89,7 +102,7 @@ gulp.task('compile-assets', ['clean-assets'], function() {
         .src(assets.less.src)
         // Compile 
         .pipe(less({
-            'paths': [assets.less.paths]
+            'paths': assets.less.paths
         }))
         .pipe(gulp.dest(assets.less.dst))
         // Reload if any file changes
