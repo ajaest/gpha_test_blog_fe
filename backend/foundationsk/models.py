@@ -34,6 +34,11 @@ class Task(db_models.Model):
     )
     
     due = db_models.DateTimeField(
-        default = datetime.datetime.now(),
+        default = datetime.datetime.now,
         null    = True
+    )
+    
+    finished = db_models.BooleanField(
+        default = False,
+        null    = False
     )

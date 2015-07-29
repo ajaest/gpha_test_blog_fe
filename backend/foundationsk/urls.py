@@ -1,6 +1,7 @@
+import django.conf.urls as urls
+import foundationsk.api.rest.v1.urls as foundationsk_restV1_urls
 
-from django.conf.urls import include, url
 
 urlpatterns = [
-    #url(r'^admin/', include(admin.site.urls)),
+    urls.url(r'^api/', urls.include(foundationsk_restV1_urls)),
 ]
