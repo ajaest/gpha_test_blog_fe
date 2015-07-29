@@ -15,7 +15,16 @@
         <div data-ng-hide="app_ready">Starting app...</div>
         <div data-ng-show="loading">Loading...</div>
         
-        <div data-ng-view></div>
+        <div data-ng-show="app_ready && !loading">
+            <nav>
+                <ul>
+                    <li><a href="#/"         >Home           </a></li>
+                    <li><a href="#/tasks/new">Create new task</a></li>
+                </ul>
+            </nav>
+            
+            <div data-ng-view></div>
+        </div>
     
     </body>
 </html>

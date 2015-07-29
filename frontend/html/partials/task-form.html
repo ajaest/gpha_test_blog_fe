@@ -1,0 +1,40 @@
+
+<form>
+    <label>
+        Summary
+        <input type="text" data-ng-model="obj.summary"/>
+    </label>
+    <div data-ng-show="error_data.summary">{{error_data.summary[0]}}</div>
+    
+    <label>
+        Description
+        <textarea data-ng-model="obj.description"></textarea>
+    </label>
+    <div data-ng-show="error_data.description">{{error_data.description[0]}}</div>
+    
+    <label>
+        Priority
+	    <select data-ng-model="obj.priority">
+	        <option value="1">Very Important</option>
+	        <option value="2">Important</option>
+	        <option value="3">Normal</option>
+	        <option value="4">Trivial</option>
+	    </select>
+    </label>
+    <div data-ng-show="error_data.priority">{{error_data.priority[0]}}</div>
+    
+    <label>
+        Due date
+        <input type="datetime-local" data-ng-model="obj.due"/>
+    </label>
+    <div data-ng-show="error_data.due">{{error_data.due[0]}}</div>
+    
+    <label>
+        Is finished/done
+        <input type="checkbox" data-ng-model="obj.finished"/>
+    </label>
+    <div data-ng-show="error_data.finished">{{error_data.finished[0]}}</div>
+    
+    
+    <button data-ng-click="saveObject()">Save</button>
+</form>

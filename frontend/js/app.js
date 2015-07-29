@@ -12,8 +12,19 @@
 	   ]
 	);
 	
+	
+	function disableStripTrailingSlashes($resourceProvider) {
+        $resourceProvider.defaults.stripTrailingSlashes = false;
+    }
+    
+    disableStripTrailingSlashes.$inject = [
+        '$resourceProvider'
+    ];
+    
+    task_manager.config(disableStripTrailingSlashes);
+	
 	// Application and route load flags and messages
-	function RegisterActionsOnRouteChange($rootScope, config) {
+	function registerActionsOnRouteChange($rootScope, config) {
 	    $rootScope.app_ready = true;
 	    $rootScope.loading   = true;
 	   
@@ -23,17 +34,21 @@
         });
         
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-            config.set_page_title(current.$$route.title || 'Finished');
+            config.set_page_title(
+                (current.$$route && current.$$route.title) || 
+                'Finished'
+            );
             $rootScope.loading = false;
         });
     }
 	
-	RegisterActionsOnRouteChange.$inject = [
+	registerActionsOnRouteChange.$inject = [
         '$rootScope',
         'config'    ,    
     ];
 	
-	task_manager.run(RegisterActionsOnRouteChange);
+	task_manager.run(registerActionsOnRouteChange);
+	
 	
 	
 	

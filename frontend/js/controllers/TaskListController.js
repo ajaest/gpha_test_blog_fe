@@ -11,11 +11,6 @@
         .catch(function (error){
             $scope.error = 'Error retrieving the task list.';
         });
-        
-        $scope.objs.$promise
-        .then(function (){
-            var i = $scope;
-        });
     }
     
     TaskListController.$inject = [

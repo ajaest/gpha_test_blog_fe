@@ -1,14 +1,13 @@
 (function (task_manager) {
-    'use strict';
     
     task_manager
     .config(['$routeProvider', function ($routeProvider) {
         
         $routeProvider
-        .when('/', {
-            title      : 'Task list'               ,
-            templateUrl: '/partials/task-list.html',
-            controller : 'TaskListController'
+        .when('/tasks/new', {
+            title      : 'Create new task'         ,
+            templateUrl: '/partials/task-form.html',
+            controller : 'TaskCreateController'
         });
           
     }]);

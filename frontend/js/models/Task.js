@@ -5,7 +5,7 @@
         $resource, 
         config
     ){
-        return $resource(config.api_url('/tasks/:id'));
+        return $resource(config.api_url('/tasks/:id', {id: '@id'}));
     }
     
     TaskFactory.$inject = [
