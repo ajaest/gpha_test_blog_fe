@@ -20,9 +20,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-"django.core.context_processors.debug" ,
-)
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
 
 ROOT_URLCONF = 'foundationsk.urls'
 

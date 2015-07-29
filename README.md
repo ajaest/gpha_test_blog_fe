@@ -3,7 +3,7 @@
 This project is a simple full REST CRUD angular project backed by a 
 python/django completely independent backend.
 
-# Installing and running the backend
+## Installing and running the backend
 
 The best way to install the backend is creating a virtualenv for Python 2.7. 
 
@@ -33,3 +33,13 @@ Finally, to run the backend debug server please do
     python manage.py runserver 0.0.0.0:8080 --traceback --noreload 
     
 The server will be available from ``http:\\localhost:8080\api\rest\v1``.
+
+## Testing
+
+### Testing the backend
+
+I included a test case for the API endpoints in foundationsk.tests module (``/backend/foundationsk/tests.py`` file). It includes a couple of implemented test cases, some unimplemented test cases and some propositions or further testing needed.
+
+To run those tests just type from the ``backend`` folder with the _virtualenv_ activated:
+
+    python manage.py tests

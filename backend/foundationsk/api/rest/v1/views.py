@@ -7,7 +7,7 @@ class TaskRESTDetailView(
 ):
 
     serializer_class = restV1_serializers.TaskDetailSerializer
-    model            = serializer_class.Meta.model
+    queryset         = serializer_class.Meta.model.objects
     
 class TaskRESTListBaseView(
     rest_views.ListAPIView
