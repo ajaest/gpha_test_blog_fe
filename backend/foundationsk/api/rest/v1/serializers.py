@@ -10,6 +10,7 @@ class TaskSummarySerializer(TaskBaseSerializer):
     
     class Meta(TaskBaseSerializer.Meta):
         fields  =(
+            'id'      ,
             'finished',            
             'summary' ,
             'priority',
@@ -22,6 +23,7 @@ class TaskDetailSerializer(TaskBaseSerializer):
     
     class Meta(TaskBaseSerializer.Meta):
         fields  =(
+            'id'         ,
             'finished'   ,
             'summary'    ,
             'description',

@@ -1,6 +1,7 @@
-
 import django.utils.datetime_safe as datetime
 import django.db.models           as db_models
+
+import pytz
 
 class Task(db_models.Model):
     
@@ -34,7 +35,9 @@ class Task(db_models.Model):
     )
     
     due = db_models.DateTimeField(
-        default = datetime.datetime.now,
+        default = lambda : \
+            datetime.datetime.utcnow() \
+            .replace(tzinfo=pytz.UTC),
         null    = True
     )
     
@@ -42,3 +45,10 @@ class Task(db_models.Model):
         default = False,
         null    = False
     )
+    
+    class Meta:
+        ordering = (
+            '-due'    ,
+            'priority',
+            'modified'
+        )
