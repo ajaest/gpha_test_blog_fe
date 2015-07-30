@@ -48,7 +48,8 @@ class Task(db_models.Model):
     
     class Meta:
         ordering = (
-            '-due'    ,
+            'finished',
             'priority',
+            '-due'    ,
             'modified'
         )

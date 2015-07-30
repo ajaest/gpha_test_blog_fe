@@ -1,0 +1,52 @@
+<div class="panel panel-default list-group-item-success" data-ng-show="message">
+    <div class="panel-body">
+        {{message}}
+    </div>
+</div>
+<div class="panel panel-default list-group-item-danger" data-ng-show="error">
+    <div class="panel-body">
+        {{error}}
+    </div>
+</div>
+
+<form class="input-group">
+    
+    <input class="form-control"  placeholder="Summary" type="text" data-ng-model="obj.summary"/>
+    
+    <div data-ng-show="error_data.summary">{{error_data.summary[0]}}</div>
+    
+    <label>
+        Description
+        <textarea class="form-control" data-ng-model="obj.description">{{obj.description}}</textarea>
+    </label>
+    <div data-ng-show="error_data.description">{{error_data.description[0]}}</div>
+    
+    <label>
+        Priority
+	    <select data-ng-model="obj.priority">
+	        <option value="1">Very Important</option>
+	        <option value="2">Important</option>
+	        <option value="3">Normal</option>
+	        <option value="4">Trivial</option>
+	    </select>
+    </label>
+    <div data-ng-show="error_data.priority">{{error_data.priority[0]}}</div>
+    
+    <label>
+        Due date
+        <input class="form-control" type="datetime-local" data-ng-model="obj.due"/>
+    </label>
+    <div data-ng-show="error_data.due">{{error_data.due[0]}}</div>
+    
+    <label>
+        Is finished/done
+        <input class="form-control" type="checkbox" data-ng-model="obj.finished"/>
+    </label>
+    <div data-ng-show="error_data.finished">{{error_data.finished[0]}}</div>
+    
+    
+    <button class="btn btn-default" data-ng-click="saveObject()">Save</button>
+    
+    <button data-ng-if="removeObject" class="btn btn-default" data-ng-click="removeObject()">Remove task</button>
+    
+</form>

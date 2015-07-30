@@ -1,0 +1,40 @@
+@import 'bootstrap.less';
+
+body { padding-top: 40px; }
+
+@media (max-width: 768px){
+    body { padding-top: 80px; }    
+}
+
+nav ul{
+    border-bottom: 1px solid @well-border;
+}
+
+form{
+    padding-top: 20px;
+    
+    width: 100%;
+    
+    label, button{
+        width: 100%;
+        margin-top: 15px;
+    }    
+    
+    [data-ng-model="obj.description"]{
+        height: 80px;    
+    }
+    
+    select{
+        width: 100%;
+        font-size: 120%;
+    }
+    
+    button{
+        width: 100%;
+    }
+    
+    input[type="checkbox"]{
+        margin: 0;
+    }
+}
+

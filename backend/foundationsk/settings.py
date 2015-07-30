@@ -12,11 +12,14 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = (
     'rest_framework',
-    'foundationsk'
+    'foundationsk'  ,
+    # App to enable CORS
+    'corsheaders'
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware'        ,
+    'django.middleware.common.CommonMiddleware'    ,
     'django.middleware.security.SecurityMiddleware',
 )
 
@@ -26,8 +29,9 @@ REST_FRAMEWORK = {
     )
 }
 
-ROOT_URLCONF = 'foundationsk.urls'
+CORS_ORIGIN_ALLOW_ALL = True
 
+ROOT_URLCONF = 'foundationsk.urls'
 
 WSGI_APPLICATION = 'foundationsk.wsgi.application'
 
