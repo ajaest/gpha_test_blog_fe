@@ -3,8 +3,7 @@
     
     function TaskCreateController(
         $scope   ,
-        Task     ,
-        $location
+        Task     
     ){
         $scope.obj = new Task();
         
@@ -14,9 +13,10 @@
         
             $scope.obj.$save()
                 .then(function (obj) {
-                    $location.path('/tasks/' + obj.id);
+                    location.href = '/#/tasks/' + obj.id + '?created';
                 })
                 .catch(function (error){
+                    $scope.message = null;
                     $scope.error = 'Error creating the task.';
                     
                     $scope.error_data = error.data;
@@ -27,8 +27,7 @@
         
     TaskCreateController.$inject = [
         '$scope'   ,
-        'Task'     ,
-        '$location'
+        'Task'     
     ];
 
     task_manager

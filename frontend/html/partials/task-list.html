@@ -1,8 +1,5 @@
-<h1>Task list</h1>
+<h1>Task manager</h1>
 
-<div data-ng-if="objs.$resolved && objs.length===0">
-    There are no tasks
-</div>
 
 <div class="panel panel-default">
     <div class="panel-heading">Information</div>
@@ -50,6 +47,10 @@
 			</li>
 			
 		</ol>
+		
+		<div data-ng-if="(objs.$resolved && objs.length===0)">
+		  There are no tasks
+		</div>
 	</div>
 
 </div>

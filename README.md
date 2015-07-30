@@ -42,9 +42,9 @@ To run the frontend, first you need to install bower and node dependencies, to d
     
 That command will also automatically trigger ``bower install``.
 
-To run the frontend debug server we use the ``webserver`` task defined in ``gulpfile.js` as follows:
+To run the frontend debug server we use the ``default`` task defined in ``gulpfile.js` as follows:
 
-    gulp webserver
+    gulp
     
 This command perform the following operations:
 
@@ -56,6 +56,13 @@ This command perform the following operations:
 6. Registers watches in all the compiled/copied files to restart the server if a change in these files occurs, starting the whole compiling/copy process again
 7. Runs the server
 
+There are 4 more tasks defined:
+
+- ``clean-assets``
+- ``compile-assets``
+- ``watch-changes``
+- ``webserver``
+
 ## Testing
 
 ### Testing the backend
@@ -66,10 +73,12 @@ To run those tests just type from the ``backend`` folder with the _virtualenv_ a
 
     python manage.py tests
     
-# Some nice features
+# Some more nice features
 - The backend is partially tested
 - The angular elements are completely modularized and separated in different files
-- The load progress is reflected by the page title
+- The load stage is reflected by the page title, but styles/animations do not have much work.
+- Backend validation in frontend.
+- Different branch for frontend development (``frontend``)
     
 # Some things that must be changed or fixed if this were a production environment or real project
 
@@ -79,5 +88,6 @@ To run those tests just type from the ``backend`` folder with the _virtualenv_ a
   - Compress JS, HTML and CSS files when copying them to production
   - Include ``frontent/js/utils/config-production.js`` instead of ``frontent/js/utils/config-debug.js`` for the ``config`` angular service.
 - Add pagination to the list models. Django API supports it, but making it work in angular is a little more complex, I just felt lazy doing it.
-- There is a ton of corner cases without styling (I just did the mayor path)
+- There is a ton of corner cases without styling (I just did the mayor path). For example, errors, messages, loading screens, etc.
 - When filtering the task list, the colors may be wrong.
+- There is no frontend tests. At the end, I got tired and I did not write them, if you want to see them just tell me. I would write them using the karma runner with the chai assertion framework, mocha's test suite organizer and sinon for prototype instrospection over the files in the ``tests`` folder. I would describe tests for each controller and model and I would use angular's ng-mocks 

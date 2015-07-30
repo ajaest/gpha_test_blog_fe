@@ -1,3 +1,13 @@
+<div class="panel panel-default list-group-item-success" data-ng-show="message">
+    <div class="panel-body">
+        {{message}}
+    </div>
+</div>
+<div class="panel panel-default list-group-item-danger" data-ng-show="error">
+    <div class="panel-body">
+        {{error}}
+    </div>
+</div>
 
 <form class="input-group">
     
@@ -7,7 +17,7 @@
     
     <label>
         Description
-        <textarea class="form-control" data-ng-model="obj.description"></textarea>
+        <textarea class="form-control" data-ng-model="obj.description">{{obj.description}}</textarea>
     </label>
     <div data-ng-show="error_data.description">{{error_data.description[0]}}</div>
     
@@ -36,4 +46,7 @@
     
     
     <button class="btn btn-default" data-ng-click="saveObject()">Save</button>
+    
+    <button data-ng-if="removeObject" class="btn btn-default" data-ng-click="removeObject()">Remove task</button>
+    
 </form>
