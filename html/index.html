@@ -26,7 +26,13 @@
                 <li 
                     role="presentation"
                     data-ng-class="selected_menu==='post-create' ? 'active' : ''"
+					data-ng-show="loggedInUserEMail"
                 ><a href="#/posts/new">Create new post</a></li>
+				 <li
+                    role="presentation"
+                    data-ng-class="selected_menu==='login' ? 'active' : ''"
+					data-ng-show="!loggedInUserEMail"
+                ><a href="#/login">Login</a></li>
             </ul>
         </nav>
 	    

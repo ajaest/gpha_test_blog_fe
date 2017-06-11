@@ -20,8 +20,8 @@
         <input type="file" data-ng-model="editingImage" base-sixty-four-input></label>
     </label
     <label class="image" >
-        <img data-ng-src="{{obj.content}}" data-ng-show="obj.content && !obj.content.value">
-        <img data-ng-src="data:{{obj.content.mimeType}};base64,{{obj.content.value}}" data-ng-show="obj.content && obj.content.value">
+        <img data-ng-src="{{obj.content}}" data-ng-if="obj" data-ng-show="obj.content && !obj.content.value">
+        <img data-ng-src="data:{{obj.content.mimeType}};base64,{{obj.content.value}}" data-ng-if="obj" data-ng-show="obj.content && obj.content.value">
         <span data-ng-show="!obj.content">No image</span>
     </label>
     <div data-ng-show="error_data.content">{{error_data.content[0]}}</div>

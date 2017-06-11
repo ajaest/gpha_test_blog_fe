@@ -1,7 +1,7 @@
 (function (blog) {
     'use strict';
     
-    var base_path         = 'http://localhost:8000/blog/v1';
+    var base_path         = 'http://localhost:8000/api/blog/v1';
     var page_title_suffix = ' - Blog (Debug)'             ;
     
     function ConfigDebugService($rootScope){
