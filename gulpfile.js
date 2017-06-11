@@ -45,6 +45,7 @@ var assets = {
             // Moment.js is used to print dates nicely
             gulpath('bower_components/moment/moment.js'              ),
             gulpath('bower_components/angular.js/angular.js'         ),
+            gulpath('bower_components/angular-base64-upload/dist/angular-base64-upload.js'),
             gulpath('bower_components/angular.js/angular-route.js'   ),
             // Angular-resource is used to modify models
             gulpath('bower_components/angular.js/angular-resource.js'),

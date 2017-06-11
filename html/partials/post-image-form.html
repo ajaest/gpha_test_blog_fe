@@ -17,10 +17,11 @@
 
 	<label data-ng-show="editable">
         Change image
-        <input type="file" data-ng-model="editingImage"></label>
+        <input type="file" data-ng-model="editingImage" base-sixty-four-input></label>
     </label
     <label class="image" >
-        <img data-ng-src="{{obj.content}}" data-ng-show="obj.content">
+        <img data-ng-src="{{obj.content}}" data-ng-show="obj.content && !obj.content.value">
+        <img data-ng-src="data:{{obj.content.mimeType}};base64,{{obj.content.value}}" data-ng-show="obj.content && obj.content.value">
         <span data-ng-show="!obj.content">No image</span>
     </label>
     <div data-ng-show="error_data.content">{{error_data.content[0]}}</div>
@@ -34,8 +35,8 @@
 
     <label>Tags: </label>
     <div class="list-group-item-text">
-
-       <span class="badge" data-ng-repeat="tag in obj.tags">{{ tag.name }}</span>
+        <em data-ng-if="obj.tags.length==0">No tags</em>
+        <span class="badge" data-ng-repeat="tag in obj.tags">{{ tag.name }}</span>
    </div>
 
     <button class="btn btn-default" data-ng-click="saveObject()" data-ng-show="editable">Save</button>

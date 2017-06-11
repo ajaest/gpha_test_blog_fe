@@ -8,7 +8,8 @@
 	   'blog', 
 	   [
 	       'ngRoute'   ,
-	       'ngResource'
+	       'ngResource',
+           'naif.base64'
 	   ]
 	);
 	

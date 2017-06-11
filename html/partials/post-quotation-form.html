@@ -29,8 +29,8 @@
 
     <label>Tags: </label>
     <div class="list-group-item-text">
-
-       <span class="badge" data-ng-repeat="tag in obj.tags">{{ tag.name }}</span>
+        <em data-ng-if="obj.tags.length==0">No tags</em>
+        <span class="badge" data-ng-repeat="tag in obj.tags">{{ tag.name }}</span>
    </div>
 
     <button class="btn btn-default" data-ng-click="saveObject()" data-ng-show="editable">Save</button>
