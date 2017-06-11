@@ -1,0 +1,38 @@
+<div class="panel panel-default list-group-item-success" data-ng-show="message">
+    <div class="panel-body">
+        {{message}}
+    </div>
+</div>
+<div class="panel panel-default list-group-item-danger" data-ng-show="error">
+    <div class="panel-body">
+        {{error}}
+    </div>
+</div>
+
+<form class="input-group">
+    
+    <input class="form-control"  placeholder="Title" type="text" data-ng-model="obj.title" data-ng-disabled="!editable"/>
+    
+    <div data-ng-show="error_data.title">{{error_data.title[0]}}</div>
+
+    <label class="quotation">
+        <textarea class="form-control" data-ng-model="obj.content" data-ng-disabled="!editable">{{obj.content}}</textarea>
+    </label>
+    <div data-ng-show="error_data.content">{{error_data.content[0]}}</div>
+
+    <div data-ng-show="editable" class="row">
+        <label class="col-md-6">
+            <input class="form-control" type="text" data-ng-model="editingTag">
+        </label>
+        <button class="btn btn-default col-md-6" data-ng-click="addTag()" data-ng-disabled="!editingTag">Add tag</button>
+    </div>
+
+    <label>Tags: </label>
+    <div class="list-group-item-text">
+
+       <span class="badge" data-ng-repeat="tag in obj.tags">{{ tag.name }}</span>
+   </div>
+
+    <button class="btn btn-default" data-ng-click="saveObject()" data-ng-show="editable">Save</button>
+
+</form>
